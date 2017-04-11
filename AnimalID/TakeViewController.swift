@@ -24,7 +24,7 @@ class TakeViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         let lat = locationManager.location?.coordinate.latitude ?? 0.00
         let long = locationManager.location?.coordinate.longitude ?? 0.00
-        
+    
         latitude.text = String(format: "%.4f", lat)
         longitude.text = String(format: "%.4f", long)
         

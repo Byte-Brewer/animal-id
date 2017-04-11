@@ -26,12 +26,6 @@ class LoginViewController: UIViewController, MFMailComposeViewControllerDelegate
         enterButtonOutlet.setTitleShadowColor(.blue, for: UIControlState.highlighted)
         
     }
-    @IBAction func registrationbutton(_ sender: UIButton) {
-        let alertController = UIAlertController(title: "Реєстрація", message: "Реєстрація в через додаток тимчасово не можлива" , preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default) {(UIAlertAction) in  self.newMessage() }
-        alertController.addAction(defaultAction)
-        present(alertController, animated: true, completion: nil)
-    }
     
     @IBAction func enterButton(_ sender: UIButton) {
         
