@@ -143,29 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zD0-Pe-EEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="883.125" y="-207.04225352112675"/>
-        </scene>
-        <!--Registration View Controller-->
-        <scene sceneID="s27-Ig-q5f">
-            <objects>
-                <viewController id="fRc-jW-aFM" customClass="RegistrationViewController" customModule="AnimalID" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="DsK-Ug-llX"/>
-                        <viewControllerLayoutGuide type="bottom" id="mnC-Dz-BjE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Vev-q2-d2x">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="YE1-K6-KLS"/>
-                    </toolbarItems>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SXm-Ad-j9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="889" y="489"/>
+            <point key="canvasLocation" x="904" y="38"/>
         </scene>
     </scenes>
     <resources>

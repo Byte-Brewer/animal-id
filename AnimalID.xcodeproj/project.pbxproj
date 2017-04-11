@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		789981CF1E97971900ED5240 /* alamofireGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789981CE1E97971900ED5240 /* alamofireGet.swift */; };
+		789983071E9CF3C100ED5240 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 789983061E9CF3C100ED5240 /* .gitignore */; };
 		78B40FF41E7D58F00006CB96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B40FF31E7D58F00006CB96 /* AppDelegate.swift */; };
 		78B40FF61E7D58F00006CB96 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B40FF51E7D58F00006CB96 /* LoginViewController.swift */; };
 		78B40FF91E7D58F00006CB96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78B40FF71E7D58F00006CB96 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		56AECA37F789FB9AFC9A18EC /* Pods-AnimalID.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalID.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnimalID/Pods-AnimalID.release.xcconfig"; sourceTree = "<group>"; };
 		702FA0A1C96F0D7B9A4027A6 /* Pods_AnimalID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimalID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		789981CE1E97971900ED5240 /* alamofireGet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alamofireGet.swift; sourceTree = "<group>"; };
+		789983061E9CF3C100ED5240 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		78B40FF01E7D58F00006CB96 /* AnimalID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B40FF31E7D58F00006CB96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78B40FF51E7D58F00006CB96 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 		78B40FE71E7D58F00006CB96 = {
 			isa = PBXGroup;
 			children = (
+				789983061E9CF3C100ED5240 /* .gitignore */,
 				78B40FF21E7D58F00006CB96 /* AnimalID */,
 				78B4100C1E7D9E8C0006CB96 /* SupportingFiles */,
 				78B40FF11E7D58F00006CB96 /* Products */,
@@ -172,6 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				789983071E9CF3C100ED5240 /* .gitignore in Resources */,
 				78B410011E7D58F00006CB96 /* LaunchScreen.storyboard in Resources */,
 				78B40FFE1E7D58F00006CB96 /* Assets.xcassets in Resources */,
 				78B40FF91E7D58F00006CB96 /* Main.storyboard in Resources */,
