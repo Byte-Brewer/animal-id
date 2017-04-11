@@ -27,6 +27,7 @@ class TakeViewController: UIViewController, CLLocationManagerDelegate {
         
         latitude.text = String(format: "%.4f", lat)
         longitude.text = String(format: "%.4f", long)
+        
         // Do any additional setup after loading the view.
     }
 }
