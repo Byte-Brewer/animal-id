@@ -30,4 +30,50 @@ class TakeViewController: UIViewController, CLLocationManagerDelegate {
         
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func sendGeoloc(_ sender: UIButton) {
+        let workWithData = WorkWithCoreData()
+        let lat = Float(locationManager.location?.coordinate.latitude ?? 0.00)
+        let long = Float(locationManager.location?.coordinate.longitude ?? 0.00)
+        workWithData.setDataCoord(lat: lat, long: long)
+        latitude.text = String(lat)
+        longitude.text = String(long)
+    }
+    
+    
+    @IBAction func sendFotoButton(_ sender: UIButton) {
+       // let vc = GetFoto()
+       // vc.uploadImageOne()
+//        print("Button")
+//        let key = UserDefaults.standard
+//        let titleName = key.string(forKey: "titleName")!
+//        let timeStart = timeToStart()
+//        showAlert(title: titleName , message: timeStart)
+//        print("good")
+        let workWithData = WorkWithCoreData()
+        workWithData.getDataCoord()
+//
+    }
+    func timeToStart() -> String {
+       // var str: String
+        let a = NSDate().timeIntervalSince1970
+        print(a)
+        let b = Double(UserDefaults.standard.integer(forKey: "startTime")) as TimeInterval
+        print(b)
+        let c = TimeInterval(b - a)
+        print(c)
+        let d = Date(timeIntervalSince1970: b)
+        print(d)
+        return String(describing: d)
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message , preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alertController.addAction(defaultAction)
+        present(alertController, animated: true, completion: nil)
+    }
+
 }

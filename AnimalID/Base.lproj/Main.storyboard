@@ -132,8 +132,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rjd-ig-rdW">
+                                <rect key="frame" x="125" y="269" width="70" height="30"/>
+                                <state key="normal" title="Send Foto">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendFotoButton:" destination="8lC-wx-XWo" eventType="touchUpInside" id="pqr-v2-veJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAe-kH-O81">
+                                <rect key="frame" x="66" y="349" width="188" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="20J-tT-RNs"/>
+                                </constraints>
+                                <state key="normal" title="setCoordinate">
+                                    <color key="titleColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendGeoloc:" destination="8lC-wx-XWo" eventType="touchUpInside" id="SJU-6z-c2S"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Rjd-ig-rdW" firstAttribute="centerX" secondItem="fhf-YM-zuK" secondAttribute="centerX" id="DMl-bt-6kN"/>
+                            <constraint firstItem="ZAe-kH-O81" firstAttribute="top" secondItem="Rjd-ig-rdW" secondAttribute="bottom" constant="50" id="M9F-Me-xrC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZAe-kH-O81" secondAttribute="trailing" constant="50" id="Pjz-3h-Ayt"/>
+                            <constraint firstItem="ZAe-kH-O81" firstAttribute="leading" secondItem="fhf-YM-zuK" secondAttribute="leadingMargin" constant="50" id="hkM-IE-Vip"/>
+                            <constraint firstItem="Rjd-ig-rdW" firstAttribute="centerY" secondItem="fhf-YM-zuK" secondAttribute="centerY" id="jGx-G2-Imc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="HOME" id="Zvz-Lj-HcR"/>
                     <connections>
