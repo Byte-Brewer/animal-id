@@ -1,4 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Animals" representedClassName="Animals" syncable="YES">
+        <attribute name="animalSize_CD" optional="YES" attributeType="Integer 16" defaultValueString="3" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="baby_CD" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="birthDate_CD" optional="YES" attributeType="String" maxValueString="10" syncable="YES"/>
+        <attribute name="breed_CD" optional="YES" attributeType="String" maxValueString="255" syncable="YES"/>
+        <attribute name="color_CD" optional="YES" attributeType="String" maxValueString="255" syncable="YES"/>
+        <attribute name="createdAt_CD" optional="YES" attributeType="String" maxValueString="10" syncable="YES"/>
+        <attribute name="id_CD" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="img_CD" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="lame_CD" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lat_CD" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="long_CD" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nickname_CD" optional="YES" attributeType="String" maxValueString="255" syncable="YES"/>
+        <attribute name="owner_CD" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pregLact_CD" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="sex_CD" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="2" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="shotDescrip_CD" optional="YES" attributeType="String" maxValueString="500" syncable="YES"/>
+        <attribute name="skinProblem_CD" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="species_CD" optional="YES" attributeType="Integer 16" defaultValueString="3" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="sterilization_CD" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="weight_CD" optional="YES" attributeType="Integer 16" defaultValueString="2" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Coord" representedClassName="Coord" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="15" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lat" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="long" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="time" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Coord" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Animals" positionX="-54" positionY="-9" width="128" height="345"/>
+    </elements>
 </model>

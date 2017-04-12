@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		789981CF1E97971900ED5240 /* alamofireGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789981CE1E97971900ED5240 /* alamofireGet.swift */; };
+		789981CF1E97971900ED5240 /* AlamofireGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789981CE1E97971900ED5240 /* AlamofireGet.swift */; };
 		789983071E9CF3C100ED5240 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 789983061E9CF3C100ED5240 /* .gitignore */; };
 		78B40FF41E7D58F00006CB96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B40FF31E7D58F00006CB96 /* AppDelegate.swift */; };
 		78B40FF61E7D58F00006CB96 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B40FF51E7D58F00006CB96 /* LoginViewController.swift */; };
@@ -17,13 +17,20 @@
 		78B410011E7D58F00006CB96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78B40FFF1E7D58F00006CB96 /* LaunchScreen.storyboard */; };
 		78B410091E7D76BC0006CB96 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B410081E7D76BC0006CB96 /* RegistrationViewController.swift */; };
 		78B4100B1E7D9E540006CB96 /* TakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B4100A1E7D9E540006CB96 /* TakeViewController.swift */; };
+		78C4D4881E9D2A9800E11518 /* GetFoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4D4871E9D2A9800E11518 /* GetFoto.swift */; };
+		78C4D4961E9E57BB00E11518 /* Coord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4D4921E9E57BB00E11518 /* Coord.swift */; };
+		78C4D4971E9E57BB00E11518 /* Coord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4D4931E9E57BB00E11518 /* Coord+CoreDataProperties.swift */; };
+		78C4D4981E9E57BB00E11518 /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4D4941E9E57BB00E11518 /* Animals.swift */; };
+		78C4D4991E9E57BB00E11518 /* Animals+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4D4951E9E57BB00E11518 /* Animals+CoreDataProperties.swift */; };
+		78C4D49C1E9E58D300E11518 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4D49B1E9E58D300E11518 /* CoreDataManager.swift */; };
+		78C4D49E1E9E5A4300E11518 /* WorkWithData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4D49D1E9E5A4300E11518 /* WorkWithData.swift */; };
 		80C88838FED8979FF3CDD9E4 /* Pods_AnimalID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702FA0A1C96F0D7B9A4027A6 /* Pods_AnimalID.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		56AECA37F789FB9AFC9A18EC /* Pods-AnimalID.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalID.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnimalID/Pods-AnimalID.release.xcconfig"; sourceTree = "<group>"; };
 		702FA0A1C96F0D7B9A4027A6 /* Pods_AnimalID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimalID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		789981CE1E97971900ED5240 /* alamofireGet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alamofireGet.swift; sourceTree = "<group>"; };
+		789981CE1E97971900ED5240 /* AlamofireGet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireGet.swift; sourceTree = "<group>"; };
 		789983061E9CF3C100ED5240 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		78B40FF01E7D58F00006CB96 /* AnimalID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B40FF31E7D58F00006CB96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +42,13 @@
 		78B410021E7D58F00006CB96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78B410081E7D76BC0006CB96 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		78B4100A1E7D9E540006CB96 /* TakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeViewController.swift; sourceTree = "<group>"; };
+		78C4D4871E9D2A9800E11518 /* GetFoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFoto.swift; sourceTree = "<group>"; };
+		78C4D4921E9E57BB00E11518 /* Coord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coord.swift; path = CoreDataFiles/Coord.swift; sourceTree = "<group>"; };
+		78C4D4931E9E57BB00E11518 /* Coord+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Coord+CoreDataProperties.swift"; path = "CoreDataFiles/Coord+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		78C4D4941E9E57BB00E11518 /* Animals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animals.swift; path = CoreDataFiles/Animals.swift; sourceTree = "<group>"; };
+		78C4D4951E9E57BB00E11518 /* Animals+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Animals+CoreDataProperties.swift"; path = "CoreDataFiles/Animals+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		78C4D49B1E9E58D300E11518 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		78C4D49D1E9E5A4300E11518 /* WorkWithData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkWithData.swift; sourceTree = "<group>"; };
 		EECDE4FEAB4006601F8B17A1 /* Pods-AnimalID.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalID.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AnimalID/Pods-AnimalID.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +75,7 @@
 		78B40FE71E7D58F00006CB96 = {
 			isa = PBXGroup;
 			children = (
+				78C4D49A1E9E57CE00E11518 /* CoreData */,
 				789983061E9CF3C100ED5240 /* .gitignore */,
 				78B40FF21E7D58F00006CB96 /* AnimalID */,
 				78B4100C1E7D9E8C0006CB96 /* SupportingFiles */,
@@ -84,7 +99,8 @@
 				78B40FF51E7D58F00006CB96 /* LoginViewController.swift */,
 				78B4100A1E7D9E540006CB96 /* TakeViewController.swift */,
 				78B410081E7D76BC0006CB96 /* RegistrationViewController.swift */,
-				789981CE1E97971900ED5240 /* alamofireGet.swift */,
+				789981CE1E97971900ED5240 /* AlamofireGet.swift */,
+				78C4D4871E9D2A9800E11518 /* GetFoto.swift */,
 				78B40FF71E7D58F00006CB96 /* Main.storyboard */,
 			);
 			path = AnimalID;
@@ -101,6 +117,19 @@
 			);
 			name = SupportingFiles;
 			path = AnimalID;
+			sourceTree = "<group>";
+		};
+		78C4D49A1E9E57CE00E11518 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				78C4D4921E9E57BB00E11518 /* Coord.swift */,
+				78C4D4931E9E57BB00E11518 /* Coord+CoreDataProperties.swift */,
+				78C4D4941E9E57BB00E11518 /* Animals.swift */,
+				78C4D4951E9E57BB00E11518 /* Animals+CoreDataProperties.swift */,
+				78C4D49D1E9E5A4300E11518 /* WorkWithData.swift */,
+				78C4D49B1E9E58D300E11518 /* CoreDataManager.swift */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		926B97A67A073955761545A7 /* Pods */ = {
@@ -238,11 +267,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				78B4100B1E7D9E540006CB96 /* TakeViewController.swift in Sources */,
-				789981CF1E97971900ED5240 /* alamofireGet.swift in Sources */,
+				789981CF1E97971900ED5240 /* AlamofireGet.swift in Sources */,
+				78C4D4991E9E57BB00E11518 /* Animals+CoreDataProperties.swift in Sources */,
+				78C4D4881E9D2A9800E11518 /* GetFoto.swift in Sources */,
 				78B40FFC1E7D58F00006CB96 /* AnimalID.xcdatamodeld in Sources */,
 				78B40FF61E7D58F00006CB96 /* LoginViewController.swift in Sources */,
+				78C4D49C1E9E58D300E11518 /* CoreDataManager.swift in Sources */,
 				78B410091E7D76BC0006CB96 /* RegistrationViewController.swift in Sources */,
 				78B40FF41E7D58F00006CB96 /* AppDelegate.swift in Sources */,
+				78C4D4971E9E57BB00E11518 /* Coord+CoreDataProperties.swift in Sources */,
+				78C4D4961E9E57BB00E11518 /* Coord.swift in Sources */,
+				78C4D4981E9E57BB00E11518 /* Animals.swift in Sources */,
+				78C4D49E1E9E5A4300E11518 /* WorkWithData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
