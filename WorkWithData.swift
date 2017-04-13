@@ -32,7 +32,7 @@ class WorkWithCoreData {
                     }
                 }
                 print(result.createdAt_CD ?? "were is createdAt_CD")
-
+                
             }
         } catch {
             print(error)
@@ -41,24 +41,29 @@ class WorkWithCoreData {
     
     func getDataCoord() {
         // Извление записей
+        
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Coord")
         do {
-            var results = try CoreDataManager.instance.managedObjectContext.fetch(fetchRequest)
+            let results = try CoreDataManager.instance.managedObjectContext.fetch(fetchRequest)
             print(results.count)
             for result in results as! [Coord] {
                 let lat = result.lat
                 let long = result.long
                 let time = result.time
-                let id = result.id 
+                let id = result.id
                 print(lat, long, time, "Lat, Long, Time", Date(timeIntervalSince1970: TimeInterval(time)), ",", id)
-                results.removeLast()
-                print("remove Last")
-                if lat == 0.0 {
-                    print("lat = 0")
+                CoreDataManager.instance.managedObjectContext.delete(result)
+                if id == 22 {
+                    print("id  == 22")
+                    result.id = Int16(arc4random_uniform(256))
+                    // CoreDataManager.instance.managedObjectContext.delete(result)
+                    //print("remove there is lat = 0")
                 }
             }
+            // видалення останньої
+            // CoreDataManager.instance.managedObjectContext.delete(results.last as! NSManagedObject)
+            // print("remove Last Again")
             CoreDataManager.instance.saveContext()
-
         } catch {
             print(error)
         }
@@ -67,12 +72,11 @@ class WorkWithCoreData {
     func setDataCoord(lat: Float, long: Float) {
         let timeNow = NSDate()
         print(timeNow)
-        print(timeNow.timeIntervalSince1970)
         let managedObject = Coord()
         managedObject.lat = lat
         managedObject.long = long
         managedObject.time = Int32(timeNow.timeIntervalSince1970)
-        print("Read time from data coord" ,managedObject.time)
+        print("Read time from data coord" , NSDate(timeIntervalSince1970: TimeInterval(managedObject.time)))
         CoreDataManager.instance.saveContext()
         
     }
@@ -144,7 +148,7 @@ class WorkWithCoreData {
         managedObject.breed_CD = breed
         managedObject.color_CD = color
         managedObject.shotDescrip_CD = shotDescrip
-
+        
         // Извлечение значения атрибута
         let nik = managedObject.nickname_CD
         print("name = \(String(describing: nik))")

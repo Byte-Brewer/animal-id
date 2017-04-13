@@ -11,7 +11,9 @@ import CoreLocation
 
 class TakeViewController: UIViewController, CLLocationManagerDelegate {
     
+    let modeOfCounting = ModelOfCounting()
     let locationManager = CLLocationManager()
+    var timer: Timer?
     
     @IBOutlet weak var latitude: UILabel!
     @IBOutlet weak var longitude: UILabel!
@@ -22,25 +24,47 @@ class TakeViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        let lat = locationManager.location?.coordinate.latitude ?? 0.00
-        let long = locationManager.location?.coordinate.longitude ?? 0.00
+        //        let lat = locationManager.location?.coordinate.latitude ?? 0.00
+        //        let long = locationManager.location?.coordinate.longitude ?? 0.00
+        //        latitude.text = String(format: "%.4f", lat)
+        //        longitude.text = String(format: "%.4f", long)
         
-        latitude.text = String(format: "%.4f", lat)
-        longitude.text = String(format: "%.4f", long)
+        //timerCoord()
         
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func sendGeoloc(_ sender: UIButton) {
-        let workWithData = WorkWithCoreData()
+        geolocInCore()
+        if modeOfCounting.isCountingActiv() {
+            print("Counting is active")
+        } else {
+            print("Counting is end or not start")
+        }
+        
+        if modeOfCounting.isCountingActiv() {
+            timerCoord()
+            let toFinish = modeOfCounting.timeToFinish()
+            let toFinishInTime = timeToStart(timeInt: toFinish)
+            showAlert(title: "До заврешеня підрахунку залишилось", message: toFinishInTime)
+            print("print")
+        } else {
+            showAlert(title: "Підрахунок завершився, дякуємо за Вашу участь", message: "Наступний підрахунок незабаром")
+            print("Poker")
+        }
+        
+        // let getFoto = GetFoto()
+        // getFoto.uploadCoord(lat: lat, long: long)
+    }
+    
+    func geolocInCore() {
         let lat = Float(locationManager.location?.coordinate.latitude ?? 0.00)
         let long = Float(locationManager.location?.coordinate.longitude ?? 0.00)
+        let workWithData = WorkWithCoreData()
         workWithData.setDataCoord(lat: lat, long: long)
         latitude.text = String(lat)
         longitude.text = String(long)
         let getFoto = GetFoto()
         getFoto.uploadCoord(lat: lat, long: long)
-        
     }
     
     
@@ -56,19 +80,32 @@ class TakeViewController: UIViewController, CLLocationManagerDelegate {
         
         let workWithData = WorkWithCoreData()
         workWithData.getDataCoord()
-        //
+        timer?.invalidate()
     }
-    func timeToStart() -> String {
-        // var str: String
-        let a = NSDate().timeIntervalSince1970
-        print(a)
-        let b = Double(UserDefaults.standard.integer(forKey: "startTime")) as TimeInterval
-        print(b)
-        let c = TimeInterval(b - a)
-        print(c)
-        let d = Date(timeIntervalSince1970: b)
-        print(d)
-        return String(describing: d)
+    func timeToStart(timeInt: TimeInterval) -> String {
+        var str = ""
+        var day = 0
+        var hour = 0
+        var minut = 0
+        var temp = -timeInt
+        while temp - 86400 > 0 {
+            day += 1
+            temp -= 86400
+        }
+        while temp - 3600 > 0 {
+            hour += 1
+            temp -= 3600
+        }
+        while temp - 60 > 0 {
+            minut += 1
+            temp -= 60
+        }
+        if day > 0 {
+            str += "\(String(day)) : days "
+        }
+        str += "\(String(hour)) : hours "
+        str += "\(String(minut)) : minuts"
+        return str
     }
     
     func showAlert(title: String, message: String) {
@@ -79,5 +116,13 @@ class TakeViewController: UIViewController, CLLocationManagerDelegate {
         alertController.addAction(defaultAction)
         present(alertController, animated: true, completion: nil)
     }
+    func timerCoord() {
+        timer = Timer.scheduledTimer(timeInterval: 600,
+                                     target: self,
+                                     selector: #selector(self.geolocInCore),
+                                     userInfo: nil,
+                                     repeats: true)
+    }
+    
     
 }

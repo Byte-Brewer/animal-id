@@ -107,7 +107,6 @@ class GetFoto {
             
             let body = NSMutableData()
             
-            
             // Title
             body.append(NSString(format: "\r\n--%@\r\n",boundary).data(using: String.Encoding.utf8.rawValue)!)
             body.append(NSString(format:"Content-Disposition: form-data; name=\"lat\"\r\n\r\n").data(using: String.Encoding.utf8.rawValue)!)
@@ -123,7 +122,7 @@ class GetFoto {
         
             request.httpBody = body as Data
             
-            let keyUser = UserDefaults.standard.string(forKey: "key") ?? ""  //AlamGet().keyFromDefault.string(forKey: "key") ?? ""
+            let keyUser = UserDefaults.standard.string(forKey: "key") ?? ""
             let key = keyUser
             
             print("Do you have key? - ", key)
@@ -148,15 +147,8 @@ class GetFoto {
                 let responseString = String(data: data, encoding: .utf8)
                 print("responseString = \(String(describing: responseString))")
             }
+        
             task.resume()
-            //            let returnData = NSURLConnection.sendSynchronousRequest (request as URLRequest, returning: nil)
-            //
-            //            let returnString = NSString(data: returnData, encoding: String.Encoding.utf8.rawValue)
-            //
-            //            print("returnString \(String(describing: returnString))")
-            
         }
-
-
 }
 

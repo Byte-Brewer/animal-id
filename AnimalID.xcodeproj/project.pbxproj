@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		782E49C51E9FB21600D5BEFD /* ModeOfCounting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E49C41E9FB21600D5BEFD /* ModeOfCounting.swift */; };
 		789981CF1E97971900ED5240 /* AlamofireGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789981CE1E97971900ED5240 /* AlamofireGet.swift */; };
 		789983071E9CF3C100ED5240 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 789983061E9CF3C100ED5240 /* .gitignore */; };
 		78B40FF41E7D58F00006CB96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B40FF31E7D58F00006CB96 /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		56AECA37F789FB9AFC9A18EC /* Pods-AnimalID.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalID.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnimalID/Pods-AnimalID.release.xcconfig"; sourceTree = "<group>"; };
 		702FA0A1C96F0D7B9A4027A6 /* Pods_AnimalID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimalID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		782E49C41E9FB21600D5BEFD /* ModeOfCounting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeOfCounting.swift; sourceTree = "<group>"; };
 		789981CE1E97971900ED5240 /* AlamofireGet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireGet.swift; sourceTree = "<group>"; };
 		789983061E9CF3C100ED5240 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		78B40FF01E7D58F00006CB96 /* AnimalID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalID.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,7 @@
 			children = (
 				78B40FF51E7D58F00006CB96 /* LoginViewController.swift */,
 				78B4100A1E7D9E540006CB96 /* TakeViewController.swift */,
+				782E49C41E9FB21600D5BEFD /* ModeOfCounting.swift */,
 				78B410081E7D76BC0006CB96 /* RegistrationViewController.swift */,
 				789981CE1E97971900ED5240 /* AlamofireGet.swift */,
 				78C4D4871E9D2A9800E11518 /* GetFoto.swift */,
@@ -278,6 +281,7 @@
 				78C4D4971E9E57BB00E11518 /* Coord+CoreDataProperties.swift in Sources */,
 				78C4D4961E9E57BB00E11518 /* Coord.swift in Sources */,
 				78C4D4981E9E57BB00E11518 /* Animals.swift in Sources */,
+				782E49C51E9FB21600D5BEFD /* ModeOfCounting.swift in Sources */,
 				78C4D49E1E9E5A4300E11518 /* WorkWithData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
