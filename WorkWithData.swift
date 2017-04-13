@@ -32,10 +32,7 @@ class WorkWithCoreData {
                     }
                 }
                 print(result.createdAt_CD ?? "were is createdAt_CD")
-                //                print("nik - \(result.nik)")
-                //                print("sex - \(result.sex)")
-                //                print("Time :  \(result.regTime)")
-                //                print("Foto: \(result.foto)")
+
             }
         } catch {
             print(error)
@@ -46,14 +43,22 @@ class WorkWithCoreData {
         // Извление записей
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Coord")
         do {
-            let results = try CoreDataManager.instance.managedObjectContext.fetch(fetchRequest)
+            var results = try CoreDataManager.instance.managedObjectContext.fetch(fetchRequest)
             print(results.count)
             for result in results as! [Coord] {
                 let lat = result.lat
                 let long = result.long
                 let time = result.time
-                print(lat, long, time, "were is createdAt_CD")
+                let id = result.id 
+                print(lat, long, time, "Lat, Long, Time", Date(timeIntervalSince1970: TimeInterval(time)), ",", id)
+                results.removeLast()
+                print("remove Last")
+                if lat == 0.0 {
+                    print("lat = 0")
+                }
             }
+            CoreDataManager.instance.saveContext()
+
         } catch {
             print(error)
         }
