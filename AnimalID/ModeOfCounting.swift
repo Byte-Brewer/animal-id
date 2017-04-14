@@ -16,11 +16,13 @@ class ModelOfCounting {
         return TimeInterval(timeToStart)
     }
     func timeToFinish() -> TimeInterval {
+        print(time.timeIntervalSince1970, "=============")
         let timeToFinish = Int(time.timeIntervalSince1970) - endTimeFunc()
         return TimeInterval(timeToFinish)
     }
     
     func isCountingActiv() -> Bool {
+        print(Int(time.timeIntervalSince1970))
         let timeToStart = Int(time.timeIntervalSince1970) - startTimeFunc()
         let timeToFinish = Int(time.timeIntervalSince1970) - endTimeFunc()
         if timeToStart > 0 && timeToFinish < 0 {
@@ -30,14 +32,14 @@ class ModelOfCounting {
     
     func startTimeFunc() -> Int {
         if let start = Int(UserDefaults.standard.string(forKey: "startTime") ?? "0") {
-            print(start)
+            print(start, "Start time")
             return start
         } else { return -1 }
     }
     
     func endTimeFunc() -> Int {
         if let end = Int(UserDefaults.standard.string(forKey: "endTime") ?? "0") {
-            print(end)
+            print(end, "End time")
             return end
         } else { return -1 }
     }

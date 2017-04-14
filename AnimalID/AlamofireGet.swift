@@ -33,31 +33,32 @@ class AlamGet {
             {
                 self.keyFromDefault.setValue(data, forKey: "key")
                 flag = true
-                 print("daaaaaata: ", data)
+                print("daaaaaata: ", data)
                 print("if get auth_key: ", flag)
             }
             //print("___________6----------------")
             
             if let startTime = myData["data"]["active_counting"]["start_datetime"].int {
                 self.keyFromDefault.setValue(startTime, forKey: "startTime")
-              //   print("Start time : ", startTime)
-              //   print("___________7----------------")
+                //   print("Start time : ", startTime)
+                //   print("___________7----------------")
                 
             }
             if let endTime = myData["data"]["active_counting"]["end_datetime"].int {
                 self.keyFromDefault.setValue(endTime, forKey: "endTime")
+                //                self.keyFromDefault.setValue(1492159011, forKey: "startTime")
                 
             }
             
-//            if let startTime = myData["data"]["next_counting"]["start_time"].int {
-//                self.keyFromDefault.setValue(startTime, forKey: "startTime")
-//                print("Startxgdgd sfhd time : ", startTime)
-//                
-//            }
-//            if let endTime = myData["data"]["next_counting"]["end_time"].int {
-//                self.keyFromDefault.setValue(endTime, forKey: "endTime")
-//                //print("End sdgsdg time : ", endTime)
-//            }
+            //            if let startTime = myData["data"]["next_counting"]["start_time"].int {
+            //                self.keyFromDefault.setValue(startTime, forKey: "startTime")
+            //                print("Startxgdgd sfhd time : ", startTime)
+            //
+            //            }
+            //            if let endTime = myData["data"]["next_counting"]["end_time"].int {
+            //                self.keyFromDefault.setValue(endTime, forKey: "endTime")
+            //                //print("End sdgsdg time : ", endTime)
+            //            }
             if let titleName = myData["data"]["active_counting"]["title"].string {
                 self.keyFromDefault.setValue(titleName, forKey: "titleName")
                 //print("titleName   : ", titleName)

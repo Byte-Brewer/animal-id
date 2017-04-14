@@ -8,13 +8,8 @@
 
 import Foundation
 import CoreData
-import UIKit
 
 class WorkWithCoreData {
-    
-    let time = NSDate()
-    let foto = UIImage(named: "horse")
-    var myImage: UIImage?
     
     func getDataAnimal() {
         // Извление записей
@@ -23,16 +18,34 @@ class WorkWithCoreData {
             let results = try CoreDataManager.instance.managedObjectContext.fetch(fetchRequest)
             print(results.count)
             for result in results as! [Animals] {
-                if result.nickname_CD == "Horse" {
-                    print("CUCYK")
-                    if let fotoData = result.img_CD {
-                        if let foto = UIImage(data: fotoData as Data) {
-                            myImage = foto
-                        }
-                    }
-                }
-                print(result.createdAt_CD ?? "were is createdAt_CD")
                 
+                let animalSize = Int(result.animalSize_CD)
+                let baby = Int(result.baby_CD)
+                let birthDate = result.birthDate_CD
+                let breed = result.breed_CD
+                let color = result.color_CD
+                let createdAt = result.createdAt_CD
+                var img: Data?
+                if let foto = result.img_CD {
+                    img = foto as! Data
+                }
+                let lame = result.lame_CD
+                let lat = result.lat_CD
+                let long = result.long_CD
+                let nickName = result.nickname_CD
+                let owner = result.owner_CD
+                let pregLact = result.pregLact_CD
+                let sex = result.sex_CD
+                let shortDescrip = result.shotDescrip_CD
+                let skinProblem = result.skinProblem_CD
+                let species = result.species_CD
+                let sterilizacion = result.sterilization_CD
+                let weight = result.weight_CD
+                
+                // MARK: - викличи финкцію яка передає данні на сервак
+                
+                print(animalSize, baby, birthDate ?? "00000000", breed ?? "00000000", color ?? "00000000", createdAt ?? nil, img, lame, lat, long, nickName ?? nil, owner, pregLact, sex, shortDescrip ?? "00000000", skinProblem, species, sterilizacion, weight)
+                print("getDataAnimals")
             }
         } catch {
             print(error)
@@ -52,15 +65,16 @@ class WorkWithCoreData {
                 let time = result.time
                 let id = result.id
                 print(lat, long, time, "Lat, Long, Time", Date(timeIntervalSince1970: TimeInterval(time)), ",", id)
-                CoreDataManager.instance.managedObjectContext.delete(result)
+                // MARK: - видалення результату кожного
+               //  CoreDataManager.instance.managedObjectContext.delete(result)
                 if id == 22 {
                     print("id  == 22")
-                    result.id = Int16(arc4random_uniform(256))
+                    // MARK: -  видалення за умови
                     // CoreDataManager.instance.managedObjectContext.delete(result)
-                    //print("remove there is lat = 0")
+                    // print("remove there is id == 22 ")
                 }
             }
-            // видалення останньої
+            // MARK: - видалення останньої
             // CoreDataManager.instance.managedObjectContext.delete(results.last as! NSManagedObject)
             // print("remove Last Again")
             CoreDataManager.instance.saveContext()

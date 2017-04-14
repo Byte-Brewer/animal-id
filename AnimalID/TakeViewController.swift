@@ -14,6 +14,12 @@ class TakeViewController: UIViewController, CLLocationManagerDelegate {
     let modeOfCounting = ModelOfCounting()
     let locationManager = CLLocationManager()
     var timer: Timer?
+    let workWithData = WorkWithCoreData()
+    
+   // let foto = UIImage(named: "horse")
+   // var myImage: UIImage?
+
+    
     
     @IBOutlet weak var latitude: UILabel!
     @IBOutlet weak var longitude: UILabel!
@@ -27,10 +33,8 @@ class TakeViewController: UIViewController, CLLocationManagerDelegate {
         //        let lat = locationManager.location?.coordinate.latitude ?? 0.00
         //        let long = locationManager.location?.coordinate.longitude ?? 0.00
         //        latitude.text = String(format: "%.4f", lat)
-        //        longitude.text = String(format: "%.4f", long)
-        
-        //timerCoord()
-        
+        //        timerCoord()
+        workWithData.getDataAnimal()
     }
     
     @IBAction func sendGeoloc(_ sender: UIButton) {
@@ -44,6 +48,7 @@ class TakeViewController: UIViewController, CLLocationManagerDelegate {
         if modeOfCounting.isCountingActiv() {
             timerCoord()
             let toFinish = modeOfCounting.timeToFinish()
+            print(toFinish, " toFinish")
             let toFinishInTime = timeToStart(timeInt: toFinish)
             showAlert(title: "До заврешеня підрахунку залишилось", message: toFinishInTime)
             print("print")
@@ -63,8 +68,8 @@ class TakeViewController: UIViewController, CLLocationManagerDelegate {
         workWithData.setDataCoord(lat: lat, long: long)
         latitude.text = String(lat)
         longitude.text = String(long)
-        let getFoto = GetFoto()
-        getFoto.uploadCoord(lat: lat, long: long)
+       // let getFoto = GetFoto()
+       // getFoto.uploadCoord(lat: lat, long: long)
     }
     
     
