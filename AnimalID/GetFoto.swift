@@ -107,6 +107,7 @@ class GetFoto {
             
             let body = NSMutableData()
             
+            
             // Title
             body.append(NSString(format: "\r\n--%@\r\n",boundary).data(using: String.Encoding.utf8.rawValue)!)
             body.append(NSString(format:"Content-Disposition: form-data; name=\"lat\"\r\n\r\n").data(using: String.Encoding.utf8.rawValue)!)
@@ -135,6 +136,8 @@ class GetFoto {
             
             let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
                 guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                    let workWithData = WorkWithCoreData()
+                    workWithData.setDataCoord(lat: lat, long: long)
                     print("error=\(String(describing: error))")
                     return
                 }
@@ -146,9 +149,31 @@ class GetFoto {
                 
                 let responseString = String(data: data, encoding: .utf8)
                 print("responseString = \(String(describing: responseString))")
+                
+              //  guard let jsonDict = response.result.value as? [String : Any]
+                //    else { return }
+                let myData = JSON(response as Any)
+                print(myData)
+                if let resp = myData["success"].bool {
+                    let respon = resp
+                    if respon {
+                        print("TuT \(time.timeIntervalSince1970)")
+                    } else {
+                        let workWithData = WorkWithCoreData()
+                        workWithData.setDataCoord(lat: lat, long: long)
+                        print("If response False put in Core Data")
+                    }
+                }
             }
         
             task.resume()
+
         }
+    
+    func setCoordOnServerOrCoreData(lat: Float, long: Float) {
+
+        uploadCoord(lat: lat, long: long)
+        
+    }
 }
 

@@ -9,23 +9,21 @@
 import UIKit
 import CoreLocation
 
-class TakeViewController: UIViewController, CLLocationManagerDelegate {
+class TakeViewController: UIViewController, CLLocationManagerDelegate, SendCountInData {
     
     let modeOfCounting = ModelOfCounting()
     let locationManager = CLLocationManager()
     var timer: Timer?
     let workWithData = WorkWithCoreData()
-    
-   // let foto = UIImage(named: "horse")
-   // var myImage: UIImage?
-
-    
-    
+      
     @IBOutlet weak var latitude: UILabel!
     @IBOutlet weak var longitude: UILabel!
+    @IBOutlet weak var countCoordInCoreData: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        timer?.invalidate()
+        timerCoord()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -35,26 +33,25 @@ class TakeViewController: UIViewController, CLLocationManagerDelegate {
         //        latitude.text = String(format: "%.4f", lat)
         //        timerCoord()
         workWithData.getDataAnimal()
+        workWithData.delegate = self
     }
     
     @IBAction func sendGeoloc(_ sender: UIButton) {
+        timer?.invalidate()
         geolocInCore()
         if modeOfCounting.isCountingActiv() {
-            print("Counting is active")
-        } else {
-            print("Counting is end or not start")
-        }
-        
-        if modeOfCounting.isCountingActiv() {
-            timerCoord()
             let toFinish = modeOfCounting.timeToFinish()
             print(toFinish, " toFinish")
             let toFinishInTime = timeToStart(timeInt: toFinish)
             showAlert(title: "До заврешеня підрахунку залишилось", message: toFinishInTime)
             print("print")
+            print("Counting is active")
+            timerCoord()
+            
         } else {
             showAlert(title: "Підрахунок завершився, дякуємо за Вашу участь", message: "Наступний підрахунок незабаром")
             print("Poker")
+            print("Counting is end or not start")
         }
         
         // let getFoto = GetFoto()
@@ -62,14 +59,24 @@ class TakeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func geolocInCore() {
-        let lat = Float(locationManager.location?.coordinate.latitude ?? 0.00)
-        let long = Float(locationManager.location?.coordinate.longitude ?? 0.00)
-        let workWithData = WorkWithCoreData()
-        workWithData.setDataCoord(lat: lat, long: long)
-        latitude.text = String(lat)
-        longitude.text = String(long)
-       // let getFoto = GetFoto()
-       // getFoto.uploadCoord(lat: lat, long: long)
+        
+        if modeOfCounting.isCountingActiv() {
+            let lat = Float(locationManager.location?.coordinate.latitude ?? 0.00)
+            let long = Float(locationManager.location?.coordinate.longitude ?? 0.00)
+            // let workWithData = WorkWithCoreData()
+            let getFoto = GetFoto()
+            getFoto.setCoordOnServerOrCoreData(lat: lat, long: long)
+            
+            // workWithData.setDataCoord(lat: lat, long: long)
+            latitude.text = String(lat)
+            longitude.text = String(long)
+            //let getFoto = GetFoto()
+            //getFoto.uploadCoord(lat: lat, long: long)
+            print("                                                           geolocInCore")
+        } else {
+            showAlert(title: "Підрахунок завершився, дякуємо за Вашу участь", message: "Наступний підрахунок незабаром")
+            timer?.invalidate()
+        }
     }
     
     
@@ -83,7 +90,7 @@ class TakeViewController: UIViewController, CLLocationManagerDelegate {
         //        showAlert(title: titleName , message: timeStart)
         //        print("good")
         
-        let workWithData = WorkWithCoreData()
+        // let workWithData = WorkWithCoreData()
         workWithData.getDataCoord()
         timer?.invalidate()
     }
@@ -122,12 +129,18 @@ class TakeViewController: UIViewController, CLLocationManagerDelegate {
         present(alertController, animated: true, completion: nil)
     }
     func timerCoord() {
-        timer = Timer.scheduledTimer(timeInterval: 600,
+        timer = Timer.scheduledTimer(timeInterval: 3.2,
                                      target: self,
                                      selector: #selector(self.geolocInCore),
                                      userInfo: nil,
                                      repeats: true)
     }
     
-    
+    func setLabel(text: Int?) {
+        if text != nil {
+        countCoordInCoreData.text = String(describing: text!)
+        } else {
+            countCoordInCoreData.text = "I don't know! "
+        }
+    }
 }

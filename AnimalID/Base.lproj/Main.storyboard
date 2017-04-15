@@ -153,18 +153,31 @@
                                     <action selector="sendGeoloc:" destination="8lC-wx-XWo" eventType="touchUpInside" id="SJU-6z-c2S"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CountCoordInCoreData" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLA-U5-e7E">
+                                <rect key="frame" x="16" y="169" width="288" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="m0N-Am-8bk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="eLA-U5-e7E" firstAttribute="leading" secondItem="fhf-YM-zuK" secondAttribute="leadingMargin" id="63S-p8-lu4"/>
                             <constraint firstItem="Rjd-ig-rdW" firstAttribute="centerX" secondItem="fhf-YM-zuK" secondAttribute="centerX" id="DMl-bt-6kN"/>
                             <constraint firstItem="ZAe-kH-O81" firstAttribute="top" secondItem="Rjd-ig-rdW" secondAttribute="bottom" constant="50" id="M9F-Me-xrC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZAe-kH-O81" secondAttribute="trailing" constant="50" id="Pjz-3h-Ayt"/>
                             <constraint firstItem="ZAe-kH-O81" firstAttribute="leading" secondItem="fhf-YM-zuK" secondAttribute="leadingMargin" constant="50" id="hkM-IE-Vip"/>
+                            <constraint firstItem="Rjd-ig-rdW" firstAttribute="top" secondItem="eLA-U5-e7E" secondAttribute="bottom" constant="50" id="iXd-Wy-p9B"/>
                             <constraint firstItem="Rjd-ig-rdW" firstAttribute="centerY" secondItem="fhf-YM-zuK" secondAttribute="centerY" id="jGx-G2-Imc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eLA-U5-e7E" secondAttribute="trailing" id="n1a-ck-Yfp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="HOME" id="Zvz-Lj-HcR"/>
                     <connections>
+                        <outlet property="countCoordInCoreData" destination="eLA-U5-e7E" id="6v2-09-f5O"/>
                         <outlet property="latitude" destination="bMC-hl-8bL" id="XAA-X6-TUG"/>
                         <outlet property="longitude" destination="zgH-pC-0Wq" id="Ecq-GO-hMX"/>
                     </connections>

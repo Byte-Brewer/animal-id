@@ -9,7 +9,13 @@
 import Foundation
 import CoreData
 
+protocol SendCountInData {
+    func setLabel(text: Int?)
+}
+
 class WorkWithCoreData {
+    
+    var delegate: SendCountInData?
     
     func getDataAnimal() {
         // Извление записей
@@ -17,6 +23,7 @@ class WorkWithCoreData {
         do {
             let results = try CoreDataManager.instance.managedObjectContext.fetch(fetchRequest)
             print(results.count)
+          //  delegate?.setLabel(text: results.count)
             for result in results as! [Animals] {
                 
                 let animalSize = Int(result.animalSize_CD)
@@ -41,6 +48,7 @@ class WorkWithCoreData {
                 let species = result.species_CD
                 let sterilizacion = result.sterilization_CD
                 let weight = result.weight_CD
+                let coreDataBool = true
                 
                 // MARK: - викличи финкцію яка передає данні на сервак
                 
@@ -59,12 +67,14 @@ class WorkWithCoreData {
         do {
             let results = try CoreDataManager.instance.managedObjectContext.fetch(fetchRequest)
             print(results.count)
+            delegate?.setLabel(text: results.count)
+
             for result in results as! [Coord] {
                 let lat = result.lat
                 let long = result.long
                 let time = result.time
                 let id = result.id
-                print(lat, long, time, "Lat, Long, Time", Date(timeIntervalSince1970: TimeInterval(time)), ",", id)
+                print("lat: ", lat, "long: ", long, "Time: ", Date(timeIntervalSince1970: TimeInterval(time)), ",", id)
                 // MARK: - видалення результату кожного
                //  CoreDataManager.instance.managedObjectContext.delete(result)
                 if id == 22 {

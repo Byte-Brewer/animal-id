@@ -16,6 +16,9 @@ class AlamGet {
     
     func getLogin(login: String, password: String) -> Bool {
         keyFromDefault.removeObject(forKey: "key")
+        keyFromDefault.removeObject(forKey: "startTime")
+        keyFromDefault.removeObject(forKey: "endTime")
+
         var flag = false
         let x = "\(login):\(password)"
         let headers: HTTPHeaders = [
@@ -23,7 +26,7 @@ class AlamGet {
             "Accept": "application/json"
         ]
         
-        Alamofire.request("http://api.animal-id.info/homeless_v1/auth/login", method: .get, headers: headers).responseJSON { response in
+       let alm = Alamofire.request("http://api.animal-id.info/homeless_v1/auth/login", method: .get, headers: headers).responseJSON { response in
             guard let jsonDict = response.result.value as? [String : Any]
                 else { return }
             
@@ -67,6 +70,13 @@ class AlamGet {
         }
         
         print("___________10----------------")
+        print(alm)
+        if alm == nil {
+            print("Bool True")
+        } else {
+            print("Bool False")
+        }
+        
         //group.wait()
         print("end func: ", flag)
         return true

@@ -7,25 +7,33 @@
 //
 
 import Foundation
+import CoreLocation
 
 class ModelOfCounting {
-    var time = NSDate()
+    
+
+  
     
     func timeToStar() -> TimeInterval {
+        let time = NSDate()
         let timeToStart = Int(time.timeIntervalSince1970) - startTimeFunc()
         return TimeInterval(timeToStart)
     }
+    
     func timeToFinish() -> TimeInterval {
+        let time = NSDate()
         print(time.timeIntervalSince1970, "=============")
         let timeToFinish = Int(time.timeIntervalSince1970) - endTimeFunc()
         return TimeInterval(timeToFinish)
     }
     
     func isCountingActiv() -> Bool {
+        let time = NSDate()
+        let timeNow = Int(time.timeIntervalSince1970)
         print(Int(time.timeIntervalSince1970))
-        let timeToStart = Int(time.timeIntervalSince1970) - startTimeFunc()
-        let timeToFinish = Int(time.timeIntervalSince1970) - endTimeFunc()
-        if timeToStart > 0 && timeToFinish < 0 {
+        let timeStart = startTimeFunc()
+        let timeFinish = endTimeFunc()
+        if timeStart < timeNow && timeFinish > timeNow {
             return true
         } else { return false }
     }
